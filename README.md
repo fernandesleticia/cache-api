@@ -9,7 +9,7 @@ application up and running.
 * Ruby version
 
 * Setting up the environment
-> export REDIS_URL="redis://localhost.com:6379/1"
+> 
 
 * Running the seed for dummy data
 > rake db:seed
