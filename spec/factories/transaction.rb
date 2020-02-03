@@ -1,5 +1,5 @@
 FactoryBot.define do
-    factory :todo do
+    factory :transaction do
         date Faker::Date.in_date_period
         description Faker::Lorem.paragraph
         reference Faker::Number.number(digits: 10)
