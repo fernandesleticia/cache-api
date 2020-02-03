@@ -4,7 +4,7 @@ This README would normally document whatever steps are necessary to get the
 application up and running.
 
 
-
+## General orientations
 
 * Ruby version
 
@@ -17,6 +17,7 @@ application up and running.
 * Database initialization
 
 * How to run the test suite
+> bundle exec rspec
 
 * Services (job queues, cache servers, search engines, etc.)
 
