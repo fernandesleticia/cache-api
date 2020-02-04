@@ -1,6 +1,9 @@
 # Cache API
 
-API that use a cache SQL Query and Russian Doll strategy 
+> API that use a cache SQL Query and Russian Doll strategy for a bank statement receipt
+
+## Technologies
+The project was build with Rails and Redis
 
 ## Basic instructions
 
@@ -11,10 +14,14 @@ API that use a cache SQL Query and Russian Doll strategy
 > up to 5.2.0
 
 * Running the seed for dummy data
-> rails db:seed
+```bash
+$ rails db:seed
+```
 
 * How to run the test suite
-> bundle exec rspec
+```bash
+$ bundle exec rspec
+```
 
 ## Dependencies
 
