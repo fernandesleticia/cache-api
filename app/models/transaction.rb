@@ -3,9 +3,15 @@ class Transaction < ApplicationRecord
     validates_presence_of :date, :description, :reference 
     belongs_to :account, touch: true
 
+    after_save :clear_cache
+
+    def clear_cache
+        clear
+    end
+
     def self.get_3_day_statement
         @connection = ActiveRecord::Base.connection
-        sql = "SELECT * FROM transactions WHERE date >= current_date - 3"
+        sql = "select * from transactions WHERE date >= current_date - 3"
         records = @connection.exec_query(sql)
     end
 

@@ -14,7 +14,7 @@ module Fetch
         if transactions.nil?
             transactions = Transaction.get_3_day_statement.to_json
             $redis.set("transactions_3", transactions)
-            $redis.expire("transactions_3", 10.minute.to_i)
+            $redis.expire("transactions_3", 10.hour.to_i)
         end
         JSON.load transactions
     end
@@ -24,7 +24,7 @@ module Fetch
         if transactions.nil?
             transactions = Transaction.get_15_day_statement.to_json
             $redis.set("transactions_15", transactions)
-            $redis.expire("transactions_15", 20.minute.to_i)
+            $redis.expire("transactions_15", 20.hour.to_i)
         end
         JSON.load transactions
     end
@@ -34,7 +34,7 @@ module Fetch
         if transactions.nil?
             transactions = Transaction.get_30_day_statement.to_json
             $redis.set("transactions_30", transactions)
-            $redis.expire("transactions_30", 30.minute.to_i)
+            $redis.expire("transactions_30", 30.hour.to_i)
         end
         JSON.load transactions
     end
