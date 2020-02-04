@@ -12,7 +12,7 @@ application up and running.
 > 
 
 * Running the seed for dummy data
-> rake db:seed
+> rails db:seed
 
 * Configuration
 

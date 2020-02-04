@@ -4,8 +4,8 @@ class CreateTransactions < ActiveRecord::Migration[6.0]
       t.date :date
       t.text :description
       t.integer :reference
-      t.integer :withdrawal
-      t.integer :deposit
+      t.float :withdrawal
+      t.float :deposit
 
       t.timestamps
     end

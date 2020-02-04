@@ -6,12 +6,20 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+# 1.times do
+#     Account.create({
+#         number: 1234, 
+#     })   
+# end
+
+account_let = Account.create({number: 1235})
 10.times do
     Transaction.create({
-        date: Faker::Date.in_date_period,
-        description: Faker::Lorem.paragraph,
-        reference: Faker::Number.number(digits: 10),
-        withdrawal:  Faker::Number.number(100000),
-        deposit:  Faker::Number.number(100000) 
+        account: account_let,
+        date: Faker::Date.in_date_period(year: 2020, month: 1),
+        description: "LESS THAN 30 DAYS",
+        reference: Faker::Number.between(from: 1, to: 10000),
+        withdrawal:  Faker::Number.decimal(l_digits: 3, r_digits: 3),
+        deposit:  Faker::Number.decimal(l_digits: 3, r_digits: 3) 
     })   
 end

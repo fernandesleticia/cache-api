@@ -3,8 +3,25 @@ class TransactionsController < ApplicationController
 
     # GET /transactions
     def index
-        # @transactions = Transaction.all
         @transactions = fetch_transactions
+        json_response(@transactions)
+    end
+
+    # GET /transaction/get_3_days
+    def get_3_days
+        @transactions = fetch_transactions_3_days
+        json_response(@transactions)
+    end
+
+    # GET /transaction/get_15_days
+    def get_15_days
+        @transactions = fetch_transactions_15_days
+        json_response(@transactions)
+    end
+
+    # GET /transaction/get_30_days
+    def get_30_days
+        @transactions = fetch_transactions_30_days
         json_response(@transactions)
     end
 
