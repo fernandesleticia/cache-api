@@ -2,7 +2,6 @@
 
 API that use a cache SQL Query and Russian Doll strategy 
 
-
 ## Basic instructions
 
 * Ruby version
