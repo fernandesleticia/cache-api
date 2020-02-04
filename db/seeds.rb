@@ -7,13 +7,38 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-account_let = Account.find_by_id(8)
 
-1.times do
+
+account = Account.create({number: 1245})
+5.times do
     Transaction.create({
-        account: account_let,
-        date: Faker::Date.in_date_period(year: 2020, month: 4),
-        description: "LESS THAN 3 DAYS",
+        account: account,
+        date: Faker::Date.in_date_period(year: 2019, month: 12),
+        description: "2019 DECEMBER",
+        reference: Faker::Number.between(from: 1, to: 10000),
+        withdrawal:  Faker::Number.decimal(l_digits: 3, r_digits: 3),
+        deposit:  Faker::Number.decimal(l_digits: 3, r_digits: 3) 
+    })   
+end
+
+account = Account.create({number: 6789})
+5.times do
+    Transaction.create({
+        account: account,
+        date: Faker::Date.in_date_period(year: 2020, month: 1),
+        description: "2020 JANUARY",
+        reference: Faker::Number.between(from: 1, to: 10000),
+        withdrawal:  Faker::Number.decimal(l_digits: 3, r_digits: 3),
+        deposit:  Faker::Number.decimal(l_digits: 3, r_digits: 3) 
+    })   
+end
+
+account = Account.create({number: 1011})
+5.times do
+    Transaction.create({
+        account: account,
+        date: Faker::Date.in_date_period(year: 2020, month: 2),
+        description: "2020 FEBRUARY",
         reference: Faker::Number.between(from: 1, to: 10000),
         withdrawal:  Faker::Number.decimal(l_digits: 3, r_digits: 3),
         deposit:  Faker::Number.decimal(l_digits: 3, r_digits: 3) 
