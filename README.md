@@ -1,31 +1,21 @@
-# Russian Doll API
+# Cache API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+API that use a cache SQL Query and Russian Doll strategy 
 
 
 ## Basic instructions
 
 * Ruby version
+> up to 2.5.0
 
-* Setting up the environment
-> 
+* Rails version
+> up to 5.2.0
 
 * Running the seed for dummy data
 > rails db:seed
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
 * How to run the test suite
 > bundle exec rspec
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
 
 ## Dependencies
 
