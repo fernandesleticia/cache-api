@@ -3,7 +3,7 @@
 > API that use a cache SQL Query and Russian Doll strategy for a bank statement receipt
 
 ## Technologies
-The project was build with Rails and Redis
+> The API was build with Rails and the cache is handle by Redis
 
 ## Basic instructions
 
@@ -25,8 +25,8 @@ $ bundle exec rspec
 
 ## Dependencies
 
-* rspec-rails - Testing framework.
-* factory_bot_rails - A fixtures replacement with a more straightforward syntax. You'll see.
-* shoulda_matchers - Provides RSpec with additional matchers.
-* faker - A library for generating fake data. We'll use this to generate test data.
-* database_cleaner - You guessed it! It literally cleans our test database to ensure a clean state in each test suite.
+* rspec-rails - A testing framework found at https://github.com/rspec/rspec-rails
+* factory_bot_rails - A fixtures replacement with a more straightforward syntax found at https://github.com/thoughtbot/factory_bot_rails
+* shoulda_matchers - Provides RSpec with additional matchers. Found at https://github.com/thoughtbot/shoulda-matchers
+* faker - A library for generating fake data found at https://github.com/faker-ruby/faker
+* database_cleaner - It literally cleans our test database to ensure a clean state in each test suite. Found at https://github.com/DatabaseCleaner/database_cleaner
