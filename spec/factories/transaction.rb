@@ -1,5 +1,5 @@
 FactoryBot.define do
-    factory :transaction do
+    factory :transaction, class: Transaction do
         association :account
         date Faker::Date.in_date_period(year: 2020, month: 4)
         description Faker::Lorem.paragraph

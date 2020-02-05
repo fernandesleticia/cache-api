@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe 'Banck API', type: :request do
+RSpec.describe 'banck API', type: :request do
     # initialize test data 
-    let!(:transactions) { create_list(:transaction, 10) }
+    let!(:transactions) { FactoryBot.create_list(:transaction, 10) }
     let(:transaction_id) { transactions.first.id }
   
     # Test suite for GET /transactions
