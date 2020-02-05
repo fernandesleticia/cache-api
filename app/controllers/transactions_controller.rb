@@ -52,7 +52,7 @@ class TransactionsController < ApplicationController
 
     def transaction_params
         # whitelist params
-        params.permit(:title, :created_by)
+        params.permit(:date, :description, :reference, :withdrawal, :deposit)
     end
 
     def set_transaction
