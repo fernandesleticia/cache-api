@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   get '/transaction/get_30_days', to: 'transactions#get_30_days'
 
   resources :accounts
+  get '/accounts/:id/transactions/:range_days', to: 'accounts#get_transactions'
 end

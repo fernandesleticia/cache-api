@@ -7,6 +7,14 @@ class AccountsController < ApplicationController
         json_response(@accounts)
     end
 
+    # GET /accounts/:id/transactions/:range_days
+    def get_transactions
+        account_id = params[:id]
+        range_days = params[:range_days]
+        @transactions = Account.transactions(account_id, range_days)
+        json_response(@transactions)
+    end
+
     # POST /accounts
     def create
         @account = Account.create!(account_params)
