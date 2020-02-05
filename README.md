@@ -34,3 +34,8 @@ $ bundle exec rspec
 * shoulda_matchers - Provides RSpec with additional matchers. Found at https://github.com/thoughtbot/shoulda-matchers
 * faker - A library for generating fake data found at https://github.com/faker-ruby/faker
 * database_cleaner - It literally cleans our test database to ensure a clean state in each test suite. Found at https://github.com/DatabaseCleaner/database_cleaner
+
+## Routes
+
+* getting transactions of a account in a range of days
+> /accounts/:id/transactions/:range_days
