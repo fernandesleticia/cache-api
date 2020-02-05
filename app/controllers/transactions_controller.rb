@@ -7,24 +7,6 @@ class TransactionsController < ApplicationController
         json_response(@transactions)
     end
 
-    # GET /transaction/get_3_days
-    def get_3_days
-        @transactions = fetch_transactions_3_days
-        json_response(@transactions)
-    end
-
-    # GET /transaction/get_15_days
-    def get_15_days
-        @transactions = fetch_transactions_15_days
-        json_response(@transactions)
-    end
-
-    # GET /transaction/get_30_days
-    def get_30_days
-        @transactions = fetch_transactions_30_days
-        json_response(@transactions)
-    end
-
     # POST /transactions
     def create
         @transaction = Transaction.create!(transaction_params)
