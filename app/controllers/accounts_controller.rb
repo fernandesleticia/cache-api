@@ -11,7 +11,7 @@ class AccountsController < ApplicationController
     def get_transactions
         account_id = params[:id]
         range_days = params[:range_days]
-        @transactions = Account.transactions(account_id, range_days)
+        @transactions = fetch_transactions(account_id, range_days)
         json_response(@transactions)
     end
 
