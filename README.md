@@ -13,11 +13,15 @@
 * Rails version
 > up to 5.2.0
 
+* Run redis monitor
+```bash
+$ redis-cli monitor
+```
+
 * Running the seed for dummy data
 ```bash
 $ rails db:seed
 ```
-
 * How to run the test suite
 ```bash
 $ bundle exec rspec
