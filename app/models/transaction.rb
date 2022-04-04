@@ -1,11 +1,10 @@
 class Transaction < ApplicationRecord
-    # validations
-    validates_presence_of :date, :description, :reference, :account
-    belongs_to :account, touch: true
+  validates_presence_of :date, :description, :reference, :account
+  belongs_to :account, touch: true
 
-    after_save :clear_cache
+  after_save :clear_cache
 
-    def clear_cache
-        clear
-    end
+  def clear_cache
+    clear
+  end
 end

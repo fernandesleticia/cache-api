@@ -2,14 +2,11 @@
 Russian Doll Caching as a tactic in a bank transation API
 
 #### Starting redis monitor
-    ```bash
     $ redis-cli monitor
-    ```
+
 
 #### Running the seed for dummy data
-    ```bash
     $ rails db:seed
-    ```
 
 #### Dependencies
 
