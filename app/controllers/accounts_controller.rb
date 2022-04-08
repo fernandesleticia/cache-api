@@ -3,21 +3,16 @@ class AccountsController < ApplicationController
 
   def index
     @accounts = Account.all
-    json_response(@accounts)
+    render json: @accounts
   end
 
-  def get_transactions
-    @transactions = fetch_transactions(params[:id], params[:range_days])
-    json_response(@transactions)
+  def show
+    render json: @account
   end
 
   def create
     @account = Account.create(account_params)
-    json_response(@account, :created)
-  end
-
-  def show
-    json_response(@account)
+    render json: @account, :created
   end
 
   def update

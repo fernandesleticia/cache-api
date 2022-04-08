@@ -21,4 +21,4 @@ Russian Doll Caching as a tactic in a bank transation API
 
 * getting transactions of a account in a range of days
 
-    > /accounts/:id/transactions/:range_days
+    > /accounts/:id/transactions/:range_in_days

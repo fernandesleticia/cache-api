@@ -4,6 +4,25 @@ class Transaction < ApplicationRecord
 
   after_save :clear_cache
 
+  EXPIRATION_TIME = 10.minute.to_i
+
+  def transactions_by_days(account_id, range_in_days)
+    key = "transactions" + "-" + account_id.to_s + "-" + range_in_days.to_s
+    transactions = $redis.get(key)
+    
+    unless transactions
+      transactions = where(account_id: account_id).where("date >= current_date - #{range_in_days}")
+      cache(key, transactions)
+    end
+
+    transactions
+  end
+
+  def cache(key, transactions)
+    $redis.set(key, transactions)
+    $redis.expire(key, EXPIRATION_TIME)
+  end
+
   def clear_cache
     clear
   end

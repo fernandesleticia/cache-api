@@ -2,17 +2,17 @@ class TransactionsController < ApplicationController
   before_action :set_transaction, only: [:show, :update, :destroy]
 
   def index
-    @transactions = fetch_transactions
-    json_response(@transactions)
+    @transactions = Transaction.all
+    render json: @transactions
   end
 
   def create
     @transaction = Transaction.create(transaction_params)
-    json_response(@transaction, :created)
+    render json: @transaction
   end
 
   def show
-    json_response(@transaction)
+    render json: @transaction
   end
 
   def update
@@ -23,6 +23,11 @@ class TransactionsController < ApplicationController
   def destroy
     @transaction.destroy
     head :no_content
+  end
+
+  def transactions_by_days
+    @transactions = transactions_by_days
+    render json: @transactions
   end
 
   private
