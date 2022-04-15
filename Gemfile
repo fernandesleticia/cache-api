@@ -3,7 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.3'
 
-gem 'pg', '~> 0.18.4'
+gem 'pg'
 
 gem 'redis'
 gem 'redis-namespace'

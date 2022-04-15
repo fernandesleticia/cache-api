@@ -1,6 +1,6 @@
-require 'rails_helper'
+require "rails_helper"
 
-RSpec.describe Transaction, type: :model do
+describe Transaction do
   # Validation tests
   # ensure columns date, description and reference are present before saving
   it { should validate_presence_of(:date) }

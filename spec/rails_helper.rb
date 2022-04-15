@@ -52,8 +52,9 @@ RSpec.configure do |config|
    config.include RequestSpecHelper, type: :request
 
   # start by truncating all the tables but then use the faster transaction strategy the rest of the time.
+  ## insure that none of our test data overlaps and causes false negatives in our tests
   config.before(:suite) do
-    DatabaseCleaner.clean_with(:truncation)
+    DatabaseCleaner.clean_with :truncation
     DatabaseCleaner.strategy = :transaction
   end
 
@@ -71,11 +72,6 @@ RSpec.configure do |config|
   # examples within a transaction, remove the following line or assign false
   # instead of true.
   config.use_transactional_fixtures = false
-
-  ## insure that none of our test data overlaps and causes false negatives in our tests
-  config.before(:suite) do
-    DatabaseCleaner.clean_with(:truncation)
-  end
 
   config.before(:each) do
     DatabaseCleaner.strategy = :transaction
