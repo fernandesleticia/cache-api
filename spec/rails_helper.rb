@@ -48,9 +48,6 @@ RSpec.configure do |config|
    # add `FactoryBot` methods
    config.include FactoryBot::Syntax::Methods
 
-   # add Parse JSON helper
-   config.include RequestSpecHelper, type: :request
-
   # start by truncating all the tables but then use the faster transaction strategy the rest of the time.
   ## insure that none of our test data overlaps and causes false negatives in our tests
   config.before(:suite) do

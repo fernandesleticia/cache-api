@@ -6,14 +6,14 @@ class Transaction < ApplicationRecord
 
   EXPIRATION_TIME = 10.minute.to_i.freeze
 
-  scope :for_account, ->(account_id) { where(account_id: account_id) }
+  scope :for_account_in_range, ->(account_id, range_in_days) { where(account_id: account_id).where("date >= current_date - #{range_in_days}") }
 
   def transactions_by_days(account_id, range_in_days)
     key = "transactions" + "-" + account_id.to_s + "-" + range_in_days.to_s
     transactions = $redis.get(key)
     
     unless transactions
-      transactions = where(account_id: account_id).where("date >= current_date - #{range_in_days}")
+      transactions = self.for_account_in_range(account_id, range_in_days)
       cache(key, transactions)
     end
 
