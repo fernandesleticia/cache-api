@@ -12,12 +12,6 @@ describe Transaction do
     it { is_expected.to belong_to :account }
   end
 
-  describe 'constants' do
-    it "should have the EXPIRATION_TIME constant set" do
-      expect(described_class.const_defined?(EXPIRATION_TIME)).to be_truthy
-    end
-  end
-
   describe 'scopes' do
     describe '.for_account_in_range' do
       subject { described_class.for_account_in_range(account.id, range_in_days) }
@@ -37,7 +31,7 @@ describe Transaction do
   end
 
   describe '#transactions_by_days' do
-    subject { described_class.new().transactions_by_days(account.id, range_in_days) }
+    subject { described_class.transactions_by_days(account.id, range_in_days) }
 
     context 'when there are transactions associated with the account' do
       let(:account) { create(:account) }
